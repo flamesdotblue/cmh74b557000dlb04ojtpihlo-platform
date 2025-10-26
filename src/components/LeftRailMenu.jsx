@@ -44,7 +44,7 @@ export default function LeftRailMenu({ role, sections, activeTab, onSelectSectio
   };
 
   return (
-    <nav aria-label="Section navigation" className="">
+    <nav aria-label="Section navigation">
       <div className="text-xs uppercase tracking-wide text-slate-500 mb-2 px-2">Sections</div>
       <ul className="space-y-1">
         {sections.map((s) => {
@@ -55,9 +55,7 @@ export default function LeftRailMenu({ role, sections, activeTab, onSelectSectio
                 onClick={() => handleClick(s.id)}
                 className={
                   "w-full text-left px-2 py-2 rounded-md text-sm transition " +
-                  (selected
-                    ? "bg-slate-900 text-white"
-                    : "text-slate-700 hover:bg-slate-100")
+                  (selected ? "bg-slate-900 text-white" : "text-slate-700 hover:bg-slate-100")
                 }
                 aria-current={selected ? "page" : undefined}
               >

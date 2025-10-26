@@ -1,5 +1,5 @@
 import React from "react";
-import { roleConfigs } from "./roleConfigs";
+import { roleConfigs } from "./roleConfigs.jsx";
 
 const ROLE_KEYS = ["recruiter", "jobseeker", "interviewer"];
 
@@ -57,14 +57,14 @@ export function useRoleRouter() {
       setView("gateway");
       setActiveRole(null);
       setActiveTab(null);
-    } else {
-      const tab = getTabFromQuery(window.location.search);
-      const validTab = validateTab(role, tab);
-      setView("role");
-      setActiveRole(role);
-      setActiveTab(validTab);
-      setQuery(role, validTab, "replace");
+      return;
     }
+    const tab = getTabFromQuery(window.location.search);
+    const validTab = validateTab(role, tab);
+    setView("role");
+    setActiveRole(role);
+    setActiveTab(validTab);
+    setQuery(role, validTab, "replace");
     const popHandler = () => {
       const r = getRoleFromQuery(window.location.search);
       const t = getTabFromQuery(window.location.search);

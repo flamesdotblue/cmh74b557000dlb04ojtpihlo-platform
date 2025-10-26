@@ -4,20 +4,11 @@ import RoleSwitcher from "./components/RoleSwitcher";
 import LeftRailMenu from "./components/LeftRailMenu";
 import RoleContent from "./components/RoleContent";
 import { useRoleRouter } from "./components/useRoleRouter";
-import { roleConfigs } from "./components/roleConfigs";
+import { roleConfigs } from "./components/roleConfigs.jsx";
 import { Menu, X } from "lucide-react";
 
 export default function App() {
-  const {
-    view,
-    activeRole,
-    activeTab,
-    setRole,
-    setTab,
-    goToGateway,
-    roleConfig,
-  } = useRoleRouter();
-
+  const { view, activeRole, activeTab, setRole, setTab, goToGateway, roleConfig } = useRoleRouter();
   const [drawerOpen, setDrawerOpen] = React.useState(false);
 
   return (
@@ -35,7 +26,9 @@ export default function App() {
                   <Menu className="w-5 h-5" />
                 </button>
               )}
-              <a href="#" className="font-semibold tracking-tight">Landing Hub</a>
+              <a href="#" className="font-semibold tracking-tight">
+                Landing Hub
+              </a>
             </div>
             {view === "role" && (
               <button
@@ -51,11 +44,7 @@ export default function App() {
         {view === "role" && activeRole && (
           <div className="border-t border-slate-200">
             <div className="max-w-6xl mx-auto px-4 py-2">
-              <RoleSwitcher
-                roles={roleConfigs}
-                activeRole={activeRole}
-                onChangeRole={(r) => setRole(r, { push: true })}
-              />
+              <RoleSwitcher roles={roleConfigs} activeRole={activeRole} onChangeRole={(r) => setRole(r, { push: true })} />
             </div>
           </div>
         )}
@@ -63,10 +52,7 @@ export default function App() {
 
       {view === "gateway" && (
         <main className="max-w-6xl mx-auto px-4 py-10">
-          <RoleGateway
-            roles={roleConfigs}
-            onSelectRole={(r) => setRole(r, { push: true })}
-          />
+          <RoleGateway roles={roleConfigs} onSelectRole={(r) => setRole(r, { push: true })} />
         </main>
       )}
 
@@ -117,9 +103,7 @@ export default function App() {
       )}
 
       <footer className="border-t border-slate-200 mt-10">
-        <div className="max-w-6xl mx-auto px-4 py-6 text-sm text-slate-500">
-          © {new Date().getFullYear()} Landing Hub
-        </div>
+        <div className="max-w-6xl mx-auto px-4 py-6 text-sm text-slate-500">© {new Date().getFullYear()} Landing Hub</div>
       </footer>
     </div>
   );

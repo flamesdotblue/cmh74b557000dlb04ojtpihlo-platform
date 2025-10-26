@@ -29,7 +29,9 @@ export default function RoleGateway({ roles, onSelectRole }) {
             <div className="font-medium text-lg">{role.title}</div>
             <div className="text-sm text-slate-600 mt-1 min-h-[44px]">{role.blurb}</div>
             <div className="mt-3 inline-flex items-center gap-2 text-sm font-medium text-slate-800">
-              <span className="px-3 py-1 rounded-full bg-slate-900 text-white group-hover:bg-slate-800 transition">Explore</span>
+              <span className="px-3 py-1 rounded-full bg-slate-900 text-white group-hover:bg-slate-800 transition">
+                Explore
+              </span>
             </div>
           </motion.button>
         ))}

@@ -2,21 +2,9 @@ import React from "react";
 
 const AnimatedRoleBadge = ({ role }) => {
   const roleStyles = {
-    recruiter: {
-      bg: "bg-blue-50",
-      ring: "ring-blue-200",
-      emoji: "🍼",
-    },
-    jobseeker: {
-      bg: "bg-emerald-50",
-      ring: "ring-emerald-200",
-      emoji: "🛝",
-    },
-    interviewer: {
-      bg: "bg-amber-50",
-      ring: "ring-amber-200",
-      emoji: "🧸",
-    },
+    recruiter: { bg: "bg-blue-50", ring: "ring-blue-200", emoji: "🍼" },
+    jobseeker: { bg: "bg-emerald-50", ring: "ring-emerald-200", emoji: "🛝" },
+    interviewer: { bg: "bg-amber-50", ring: "ring-amber-200", emoji: "🧸" },
   }[role] || { bg: "bg-slate-50", ring: "ring-slate-200", emoji: "✨" };
 
   return (
